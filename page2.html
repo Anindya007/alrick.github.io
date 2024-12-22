@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typeform-like Survey</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s ease;
+        }
+
+        #survey-container {
+            width: 1600px;
+            /*height: 500px;*/
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .question {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .question.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .progress-bar {
+            height: 5px;
+            background-color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #3498db;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .next-btn, .submit-btn {
+            background-color: #2771d8;
+            color: white;
+            border: none;
+            padding: 7px 24px;
+            border-radius: .33em;
+            min-width: 9em;
+            cursor: pointer;
+            margin-top: 0.5em;
+            height: 2.2em;
+            padding-bottom: 1.6em;
+            font-size: clamp(17px, 1.25vw, 24px);
+            transition: background-color .4s cubic-bezier(.215,.61,.355,1),color .4s cubic-bezier(.215,.61,.355,1),box-shadow .4s cubic-bezier(.215,.61,.355,1);
+        }
+
+        .next-btn:hover, .submit-btn:hover {
+            background-color: #2980b9;
+        }
+
+        #thank-you {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="w-3/4 max-w-l bg-white rounded-xl shadow-lg text-center p-8">
+        <!-- Progress Bar -->
+        <div class="w-full h-1 bg-gray-200 rounded-full mb-8">
+            <div class="progress h-full bg-blue-500 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+        </div>
+
+        <form id="survey-form" class="space-y-6">
+            <!-- Question 1 -->
+            <div class="question active" data-question="1">
+                <h2>What service do you need today?</h2>
+                <select 
+                    id="service" 
+                    name="service" 
+                    required 
+                    class="w-50 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                    
+                    <option value="mobile">Mobile Device Repair</option>
+                    <option value="computer">Computer Repair</option>
+                    <option value="console">Gaming Console Repair</option>
+                    <option value="network">Professional Document Preparation</option>
+                    <option value="other">Resume & Cover Letter Writing</option>
+                    <option value="other">Business Correspondence Letter Writing</option>
+                    <option value="other">Website Designing</option>                    
+                    </select>
+                <button type="button" class="next-btn mx-3 px-[5.5rem]">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                </button>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question" data-question="2">
+                <h2>Enter your device's type</h2>
+                <select 
+                    id="device" 
+                    name="device" 
+                    required 
+                    class="w-50 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                    <option value="">Android</option>
+                    <option value="mobile">IPhone</option>
+                    <option value="mobile">Other</option>
+                </select>
+                <button type="button" class="next-btn mx-3">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg></button>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question" data-question="3">
+                <h2>Enter your device's brand</h2>
+                <select id="device" 
+                name="device" class="w-50 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <option>Samsung</option>
+                    <option>LG</option>
+                    <option>Google</option>
+                    <option>OnePlus</option>
+                </select>
+                <button type="button" class="next-btn mx-3">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg></button>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question" data-question="4">
+                <h2>Tell us about your needs in details?</h2>
+                <textarea name="project" rows="4" class="focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                <button type="button" class="submit-btn">Submit</button>
+            </div>
+
+        </form>
+
+        <!-- Thank You Message -->
+        <div id="thank-you" class="hidden text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Thank you!</h2>
+            <p class="text-gray-600">We've received your submission and will get back to you soon.</p>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        const $questions = $('.question');
+        const $progressBar = $('.progress');
+        const totalQuestions = $questions.length;
+        let currentQuestion = 1;
+
+        function updateProgress() {
+            const progressPercentage = ((currentQuestion - 1) / (totalQuestions - 1)) * 100;
+            $progressBar.width(`${progressPercentage}%`);
+        }
+
+        function validateCurrentQuestion() {
+            const $currentQuestion = $(`.question[data-question="${currentQuestion}"]`);
+            const $inputs = $currentQuestion.find('input, textarea');
+            return $inputs.toArray().every(input => input.checkValidity());
+        }
+
+        $('.next-btn').on('click', function() {
+            if (validateCurrentQuestion()) {
+                $(`.question[data-question="${currentQuestion}"]`).removeClass('active');
+                currentQuestion++;
+                $(`.question[data-question="${currentQuestion}"]`).addClass('active');
+                updateProgress();
+            } else {
+                alert('Please fill out this field');
+            }
+        });
+
+        $('.submit-btn').on('click', function() {
+            if (validateCurrentQuestion()) {
+                const formData = {};
+                $questions.each(function() {
+                    const $inputs = $(this).find('input, textarea');
+                    $inputs.each(function() {
+                        formData[$(this).attr('name')] = $(this).val();
+                    });
+                });
+
+                console.log('Form Data:', formData);
+                $('#survey-form').hide();
+                $('#thank-you').show();
+            } else {
+                alert('Please fill out this field');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

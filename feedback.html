@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Feedback - Cyber Technical Administrative Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            cursor: pointer;
+            width: 35px;
+            font-size: 35px;
+        }
+        .star-rating label:before {
+            content: '\f005';
+            font-family: 'Font Awesome 6 Free';
+            display: inline-block;
+            color: #ddd;
+        }
+        .star-rating input:checked ~ label:before,
+        .star-rating label:hover:before,
+        .star-rating label:hover ~ label:before {
+            color: #ffd700;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-blue-900 mb-4">Share Your Experience</h1>
+            <p class="text-xl text-gray-600">Help us improve our services with your feedback</p>
+        </header>
+
+        <form class="bg-white shadow-lg rounded-lg p-8 space-y-6">
+            <div>
+                <label for="name" class="block text-gray-700 font-bold mb-2">Your Name</label>
+                <div class="relative">
+                    <i class="fas fa-user absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        placeholder="Your Name"
+                        class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-bold mb-4">Service Quality Rating</label>
+                <div class="star-rating flex flex-row-reverse justify-end gap-1">
+                    <input type="radio" id="star5" name="service_rating" value="5">
+                    <label for="star5" title="5 stars"></label>
+                    <input type="radio" id="star4" name="service_rating" value="4">
+                    <label for="star4" title="4 stars"></label>
+                    <input type="radio" id="star3" name="service_rating" value="3">
+                    <label for="star3" title="3 stars"></label>
+                    <input type="radio" id="star2" name="service_rating" value="2">
+                    <label for="star2" title="2 stars"></label>
+                    <input type="radio" id="star1" name="service_rating" value="1">
+                    <label for="star1" title="1 star"></label>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-bold mb-4">Staff Professionalism Rating</label>
+                <div class="star-rating flex flex-row-reverse justify-end gap-1">
+                    <input type="radio" id="prof5" name="staff_rating" value="5">
+                    <label for="prof5" title="5 stars"></label>
+                    <input type="radio" id="prof4" name="staff_rating" value="4">
+                    <label for="prof4" title="4 stars"></label>
+                    <input type="radio" id="prof3" name="staff_rating" value="3">
+                    <label for="prof3" title="3 stars"></label>
+                    <input type="radio" id="prof2" name="staff_rating" value="2">
+                    <label for="prof2" title="2 stars"></label>
+                    <input type="radio" id="prof1" name="staff_rating" value="1">
+                    <label for="prof1" title="1 star"></label>
+                </div>
+            </div>
+
+            <div>
+                <label for="service" class="block text-gray-700 font-bold mb-2">Service Used</label>
+                <select 
+                    id="service" 
+                    name="service" 
+                    required 
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                    <option value="">Select a Service</option>
+                    <option value="mobile">Mobile Device Repair</option>
+                    <option value="computer">Computer Repair</option>
+                    <option value="console">Gaming Console Repair</option>
+                    <option value="remote">Remote Troubleshooting</option>
+                    <option value="document">Document Preparation</option>
+                    <option value="resume">Resume/Cover Letter</option>
+                    <option value="business">Business Correspondence</option>
+                    <option value="web">Web Design</option>
+                    <option value="network">Network Support</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-bold mb-2">Would you recommend us?</label>
+                <div class="space-x-4">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="recommend" value="yes" class="form-radio text-blue-600">
+                        <span class="ml-2">Yes</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="recommend" value="no" class="form-radio text-blue-600">
+                        <span class="ml-2">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <label for="feedback" class="block text-gray-700 font-bold mb-2">Your Feedback</label>
+                <textarea 
+                    id="feedback" 
+                    name="feedback" 
+                    rows="5" 
+                    required 
+                    placeholder="Share your experience with our service..."
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+            </div>
+
+            
+
+            <div>
+                <button 
+                    type="submit" 
+                    class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out flex items-center justify-center"
+                >
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Submit Feedback
+                </button>
+            </div>
+        </form>
+
+        <footer class="mt-16 text-center text-gray-600 border-t pt-8">
+            <p>&copy; 2024 Cyber Technical Administrative Services. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-600">Terms of Service</a>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>
