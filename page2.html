@@ -6,6 +6,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="carousel1.css"></link>
+    <link rel="stylesheet" href="carousel2.css"></link>
+    <link rel="stylesheet" href="carousel3.css"></link>
+    <link rel="stylesheet" href="carousel4.css"></link>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,15 +46,9 @@
             transform: translateY(0);
         }
 
-        input[type="text"], 
-        input[type="email"], 
         textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 20px 0;
+            width: 100%; 
             border: 2px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 16px;
         }
 
         .progress-bar {
@@ -89,6 +87,8 @@
             display: none;
         }
     </style>
+    
+        
 </head>
 <body>
     
@@ -102,7 +102,7 @@
             <!-- Question 1 -->
             <div class="question active" data-question="1">
                 <h2>What service do you need today?</h2>
-                <select 
+                <!-- <select 
                     id="service" 
                     name="service" 
                     required 
@@ -116,7 +116,45 @@
                     <option value="other">Resume & Cover Letter Writing</option>
                     <option value="other">Business Correspondence Letter Writing</option>
                     <option value="other">Website Designing</option>                    
-                    </select>
+                    </select> -->
+
+                    <input type="radio" name="service" value="mobile"/>
+                    <input type="radio" name="service" value="computer"/>
+                    <input type="radio" name="service" value="gaming" checked/>
+                    <input type="radio" name="service" value="document"/>
+                    <input type="radio" name="service" value="resume"/>
+                    <input type="radio" name="service" value="business"/>
+                    <input type="radio" name="service" value="website"/>
+                    <div id="carousel1">
+                        <div class="carousel1__item">
+                            <img src="mobile_repairing.png">
+                            <h3 class="name">Mobile Device Repair</h3>
+                        </div>
+                        <div class="carousel1__item">
+                            <img src="computer_repairing.png">
+                            <h3 class="name">Computer Repair</h3>                       
+                        </div>
+                        <div class="carousel1__item">
+                            <img src="gaming_console_servicing.png">
+                            <h3 class="name">Gaming Console Repair</h3>                       
+                        </div>
+                        <div class="carousel1__item">
+                            <img src="images/4.jpg">
+                            <h3 class="name">Professional Document Preparation</h3>                        
+                        </div>
+                        <div class="carousel1__item">
+                            <img src="images/5.jpg">
+                            <h3 class="name">Resume & Cover Letter Writing</h3>                        
+                        </div>
+                        <div class="carousel1__item">
+                            <img src="images/6.jpg">
+                            <h3 class="name">Business Correspondence Letter Writing</h3>                        
+                        </div>
+                        <div class="carousel1__item">
+                            <img src="website_design.png">
+                            <h3 class="name">Website Designing</h3>                        
+                        </div>
+                    </div>
                 <button type="button" class="next-btn mx-3 px-[5.5rem]">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                         </svg>
@@ -126,41 +164,382 @@
             <!-- Question 2 -->
             <div class="question" data-question="2">
                 <h2>Enter your device's type</h2>
-                <select 
-                    id="device" 
-                    name="device" 
-                    required 
-                    class="w-50 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                    <option value="">Android</option>
-                    <option value="mobile">IPhone</option>
-                    <option value="mobile">Other</option>
-                </select>
-                <button type="button" class="next-btn mx-3">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg></button>
+                <div class="type-options hidden" data-brand="computer">
+                    <input type="radio" name="device_type" value="Asus" checked/>
+                    <input type="radio" name="device_type" value="Acer"/>
+                    <input type="radio" name="device_type" value="Dell"/>
+                    <input type="radio" name="device_type" value="Apple"/>
+                    
+                        <div class="carousel3">
+                            <div class="carousel3__item">
+                                <img src="">
+                                <h3 class="name">Asus</h3>
+                            </div>
+                            <div class="carousel3__item">
+                                <img src="">
+                                <h3 class="name">Acer</h3>                       
+                            </div>
+                            <div class="carousel3__item">
+                                <img src="">
+                                <h3 class="name">Dell</h3>                       
+                            </div>
+                            <div class="carousel3__item">
+                                <img src="">
+                                <h3 class="name">Apple</h3>                       
+                            </div>
+                            <!-- <div class="carousel3__item">
+                                <img src="images/3.jpg">
+                                <h3 class="name">Other</h3>                       
+                            </div> -->
+                        </div>
+                    <button type="button" class="next-btn mx-3">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="type-options hidden" data-brand="mobile">
+                        <input type="radio" name="device_type" value="android"/>
+                        <input type="radio" name="device_type" value="iphone" checked/>
+                        <input type="radio" name="device_type" />
+                        <div id="carousel2">
+                            <div class="carousel2__item">
+                                <img src="1.jpg">
+                                <h3 class="name">Android</h3>
+                            </div>
+                            <div class="carousel2__item">
+                                <img src="images/2.jpg">
+                                <h3 class="name">IPhone</h3>                       
+                            </div>
+                            <div class="carousel2__item">
+                                <img src="images/3.jpg">
+                                <h3 class="name">Other</h3>                       
+                            </div>
+                        </div>
+                    <button type="button" class="next-btn mx-3">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg></button>
+                </div>        
             </div>
+
+            
 
             <!-- Question 3 -->
             <div class="question" data-question="3">
                 <h2>Enter your device's brand</h2>
-                <select id="device" 
-                name="device" class="w-50 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                    <option>Samsung</option>
-                    <option>LG</option>
-                    <option>Google</option>
-                    <option>OnePlus</option>
-                </select>
+                <div class="os-options hidden" data-brand="android">
+                    <input type="radio" name="brand" value="samsung" checked/>
+                    <input type="radio" name="brand" value="lg"/>
+                    <input type="radio" name="brand" value="google"/>
+                    <input type="radio" name="brand" value="oneplus"/>
+                    
+                        <div class="carousel3">
+                            <div class="carousel3__item">
+                                <img src="samsung s24 ultra.jpg">
+                                <h3 class="name">Samsung</h3>
+                            </div>
+                            <div class="carousel3__item">
+                                <img src="LG.webp">
+                                <h3 class="name">LG</h3>                       
+                            </div>
+                            <div class="carousel3__item">
+                                <img src="google.jpg">
+                                <h3 class="name">Google</h3>                       
+                            </div>
+                            <div class="carousel3__item">
+                                <img src="OnePlus.jpg">
+                                <h3 class="name">OnePlus</h3>                       
+                            </div>
+                            <!-- <div class="carousel3__item">
+                                <img src="images/3.jpg">
+                                <h3 class="name">Other</h3>                       
+                            </div> -->
+                        </div>
+                    <button type="button" class="next-btn mx-3">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="os-options hidden" data-brand="iphone">
+                    <input type="radio" name="brand" value="iPhone_15" checked/>
+                    <input type="radio" name="brand" value="iPhone_14"/>
+                    <input type="radio" name="brand" value="iPhone_13"/>
+                    <input type="radio" name="brand" value="iPhone_12"/>
+                    
+                        <div class="carousel3">
+                            <div class="carousel3__item">
+                                <img src="1.jpg">
+                                <h3 class="name">iPhone 15</h3>
+                            </div>
+                            <div class="carousel3__item">
+                                <img src="2.webp">
+                                <h3 class="name">iPhone 14</h3>                       
+                            </div>
+                            <div class="carousel3__item">
+                                <img src="3.jpg">
+                                <h3 class="name">iPhone 13</h3>                       
+                            </div>
+                            <div class="carousel3__item">
+                                <img src="4.jpg">
+                                <h3 class="name">iPhone 12</h3>                       
+                            </div>
+                            <!-- <div class="carousel3__item">
+                                <img src="images/3.jpg">
+                                <h3 class="name">Other</h3>                       
+                            </div> -->
+                        </div>
+                    <button type="button" class="next-btn mx-3">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </button>
+                </div>
+
+                
+            </div>
+
+             <!-- Question 4 - Model Selection (Dynamic based on brand) -->
+             <div class="question hidden" data-question="4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Which model interests you?</h2>
+                <!-- Samsung Models -->
+                <div class="model-options hidden" data-brand="samsung">
+                    <!-- <div class="space-y-4">
+                        <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-all duration-200">
+                            <input type="radio" name="model" value="s23-ultra" class="h-4 w-4 text-blue-500 focus:ring-blue-500" required>
+                            <span class="ml-3 text-gray-700">Galaxy S24</span>
+                        </label>
+                        <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-all duration-200">
+                            <input type="radio" name="model" value="s23-ultra" class="h-4 w-4 text-blue-500 focus:ring-blue-500" required>
+                            <span class="ml-3 text-gray-700">Galaxy S23 Ultra</span>
+                        </label>
+                        <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-all duration-200">
+                            <input type="radio" name="model" value="s23-plus" class="h-4 w-4 text-blue-500 focus:ring-blue-500" required>
+                            <span class="ml-3 text-gray-700">Galaxy S23+</span>
+                        </label>
+                        <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-all duration-200">
+                            <input type="radio" name="model" value="z-fold4" class="h-4 w-4 text-blue-500 focus:ring-blue-500" required>
+                            <span class="ml-3 text-gray-700">Galaxy S22</span>
+                        </label>
+                        <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-all duration-200">
+                            <input type="radio" name="model" value="z-fold4" class="h-4 w-4 text-blue-500 focus:ring-blue-500" required>
+                            <span class="ml-3 text-gray-700">Galaxy S21</span>
+                        </label>
+                    </div> -->
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" checked/>
+                    <input type="radio" name="model" />
+                    
+                    <div class="carousel4">
+                        <div class="carousel4__item">
+                            <img src="s24.webp">
+                            <h3 class="name">Galaxy S24</h3>
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="s23.png">
+                            <h3 class="name">Galaxy S23 Ultra</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="s22.png">
+                            <h3 class="name">Galaxy S22</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="s21.png">
+                            <h3 class="name">Galaxy S21</h3>                        
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- LG Models -->
+                <div class="model-options hidden" data-brand="lg">
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" checked/>
+                    <input type="radio" name="model" />
+                    <!-- All these OnePlus Model images have been sourced from OnePlus brand website-->
+                    <div class="carousel4">
+                        <div class="carousel4__item">
+                            <img src="oneplus12.webp">
+                            <h3 class="name">LG Velvet</h3>
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="oneplus11.png">
+                            <h3 class="name">LG Wing</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="oneplus10pro.png">
+                            <h3 class="name">LG V60 ThinQ</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="oneplus9.png">
+                            <h3 class="name">LG G8 ThinQ</h3>                        
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <!-- Google Models -->
+                <div class="model-options hidden" data-brand="google">
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" checked/>
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" />
+                    <div class="carousel4">
+                        <div class="carousel4__item">
+                            <img src="pixel8pro.png">
+                            <h3 class="name">Pixel8 Pro</h3>
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="pixel8.png">
+                            <h3 class="name">Pixel8</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="pixel7pro.webp">
+                            <h3 class="name">Pixel7 Pro</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="pixel7.webp">
+                            <h3 class="name">Pixel7</h3>                        
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="pixel6a.webp">
+                            <h3 class="name">Pixel6a</h3>                        
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="pixel6.webp">
+                            <h3 class="name">Pixel 6</h3>                        
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="pixel5.webp">
+                            <h3 class="name">Pixel 5</h3>                        
+                        </div>
+                    </div>
+                </div>
+                <!-- OnePlus Models -->
+                <div class="model-options hidden" data-brand="oneplus">
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" checked/>
+                    <input type="radio" name="model" />
+                    <!-- All these OnePlus Model images have been sourced from OnePlus brand website-->
+                    <div class="carousel4">
+                        <div class="carousel4__item">
+                            <img src="oneplus12.webp">
+                            <h3 class="name">OnePlus 12</h3>
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="oneplus11.png">
+                            <h3 class="name">OnePlus 11</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="oneplus10pro.png">
+                            <h3 class="name">OnePlus 10 Pro</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="oneplus9.png">
+                            <h3 class="name">OnePlus 9</h3>                        
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="model-options hidden" data-brand="asus">
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" />
+                    <input type="radio" name="model" checked/>
+                    <input type="radio" name="model" />
+                    <!-- All these OnePlus Model images have been sourced from OnePlus brand website-->
+                    <div class="carousel4">
+                        <div class="carousel4__item">
+                            <img src="asus_zenbook_pro.jpg">
+                            <h3 class="name">Asus Zenbook Pro</h3>
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="asus_vivobook_14.jpg">
+                            <h3 class="name">Asus Vivobook 14</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="asus_vivobook_17.png">
+                            <h3 class="name">Asus Vivobook 17</h3>                       
+                        </div>
+                        <div class="carousel4__item">
+                            <img src="asus_rog_zephyrus.jpg">
+                            <h3 class="name">Asus ROG Zephyrus</h3>                        
+                        </div>
+                        
+                    </div>
+                </div>
                 <button type="button" class="next-btn mx-3">Next<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                     </svg></button>
             </div>
 
-            <!-- Question 4 -->
-            <div class="question" data-question="4">
-                <h2>Tell us about your needs in details?</h2>
-                <textarea name="project" rows="4" class="focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                <button type="button" class="submit-btn">Submit</button>
+            <!-- Question 5 -->
+            <div class="question" data-question="5">
+                <!-- <h2>Tell us about your needs in details?</h2> -->
+                <!-- <div class="grid grid-cols-3 gap-3"> -->
+                    <div>
+                        <div class="mb-3">
+                            <label for="last_name" class="mb-2 text-sm font-medium text-gray-900 dark:text-white"> Please enter your Name</label>
+                            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="first_name" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Please enter your Email</label>
+                            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                        </div>                                             
+                        <div class="mb-3">
+                            <label for="device" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Device</label>
+                            <input type="text" id="device" disabled class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="timeframe" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Timeframe</label>
+                            <input type="text" id="timeframe" disabled class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                        </div> -->
+                        <div class="mb-3">
+                            <label for="warranty" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Warranty</label>
+                            <input type="text" id="warranty" value="1 year" disabled class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="imei" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Please enter your IMEI Number</label>
+                            <input type="text" id="imei" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="receipt" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Receipt or Invoice</label>
+                            <input type="file" id="receipt" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="receipt" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Screenshot at the back of the phone</label>
+                            <input type="file" id="receipt" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" name="data_backup" class="form-checkbox">
+                                    <span class="ml-2">Is charger and cable provided?</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" name="data_backup" class="form-checkbox">
+                                    <span class="ml-2">Is Data Backup Done?</span>
+                                </label>
+
+                            </div> 
+                        </div>                    
+                        <div class="mb-3">
+                            <label for="issues" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Tell us about the issues in detail</label>
+                            <textarea id="issues" rows="4" class="focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                        </div>
+                        <button type="button" class="submit-btn">Send me a Quote</button>
+                    </div>
+                    <!-- <div class="h-[22em] min-h-[1em] w-px ml-[14.5rem] self-stretch bg-gradient-to-tr from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400"></div> 
+                    <div>
+                        09
+                    </div>   -->                  
+                <!-- </div> -->
+                
+                
             </div>
 
         </form>
@@ -181,6 +560,9 @@
         const $progressBar = $('.progress');
         const totalQuestions = $questions.length;
         let currentQuestion = 1;
+        let selectedDeviceType = '';
+        let selectedBrand = '';
+        let selectedOs = '';
 
         function updateProgress() {
             const progressPercentage = ((currentQuestion - 1) / (totalQuestions - 1)) * 100;
@@ -189,14 +571,84 @@
 
         function validateCurrentQuestion() {
             const $currentQuestion = $(`.question[data-question="${currentQuestion}"]`);
+
+             // Special validation for brand selection
+        if (currentQuestion === 3) {
+            return $currentQuestion.find('input[name="brand"]:checked').length > 0;
+        }
+        
+        // Special validation for model selection
+        if (currentQuestion === 4) {
+            return $currentQuestion.find('input[name="model"]:checked').length > 0;
+        }
+
             const $inputs = $currentQuestion.find('input, textarea');
             return $inputs.toArray().every(input => input.checkValidity());
         }
+
+
+    // Handle brand selection and show corresponding models
+    $('input[name="service"]').on('change', function() {
+        selectedDeviceType = $(this).val();
+    });
+    
+    // Handle os selection and show corresponding brands
+    $('input[name="device_type"]').on('change', function() {
+        selectedOs = $(this).val();
+    });    
+
+    // Handle brand selection and show corresponding models
+    $('input[name="brand"]').on('change', function() {
+        selectedBrand = $(this).val();
+    });
+
+
+
+    function showRelevantDeviceTypes() {
+        $('.type-options').addClass('hidden');
+        
+        $(`.type-options[data-brand="${selectedDeviceType}"]`).removeClass('hidden');
+    }
+
+    // When moving to model selection question, show relevant models
+    function showRelevantBrands() {
+        $('.os-options').addClass('hidden');
+        
+        $(`.os-options[data-brand="${selectedOs}"]`).removeClass('hidden');
+    }
+
+
+    // When moving to model selection question, show relevant models
+    function showRelevantModels() {
+        $('.model-options').addClass('hidden');
+        
+        $(`.model-options[data-brand="${selectedBrand}"]`).removeClass('hidden');
+    }
 
         $('.next-btn').on('click', function() {
             if (validateCurrentQuestion()) {
                 $(`.question[data-question="${currentQuestion}"]`).removeClass('active');
                 currentQuestion++;
+
+                // If moving to brand selection question, show relevant brands
+                if (currentQuestion === 2 ) {                    
+                    showRelevantDeviceTypes();
+                }
+
+                 // If moving to model selection question, show relevant models
+                if (currentQuestion === 4 ) {
+                    if (selectedOs === "iphone")
+                        currentQuestion++;
+                    else
+                        showRelevantModels();
+                }
+
+                 // If moving to brand selection question, show relevant brands
+                 if (currentQuestion === 3 ) {                    
+                    showRelevantBrands();
+                }
+
+
                 $(`.question[data-question="${currentQuestion}"]`).addClass('active');
                 updateProgress();
             } else {
@@ -223,5 +675,6 @@
         });
     });
     </script>
+        
 </body>
 </html>
